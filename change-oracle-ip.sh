@@ -1,12 +1,14 @@
 #!/bin/bash
 
-compartmentId="ocid1.tenancy.oc1..aaaaaaaabfmu26ci2j4fb7yntkjnckmk6mrhcysyxzacayxa4v7laefwo2ua"
-AVAILABILITY_DOMAIN="ULPB:AP-TOKYO-1-AD-1"
+#更换为你的租户ID
+compartmentId="YOUR_Tenancy_OCID"
+#更换为想要检测的区域
+AVAILABILITY_DOMAIN="YOUR_AVAILABILITY_DOMAIN"
 
 #server酱开关，0为关闭，1为开启
-NOTIFICATION=1
+NOTIFICATION=0
 #server酱api
-SERVERCHAN_KEY='SCU81833T795aa42442f7087af6ff00c90f1455d65e419c7b6a0e9'
+SERVERCHAN_KEY='YOUR_SERVERCHAN_KEY'
 
 #ping检测的次数
 PINGTIMES=30
@@ -50,10 +52,7 @@ function main {
 		#获取ip各项信息
 		local ipaddress=$(echo $ipjson | jq -r '.data['${i}']."ip-address"')
 		local publicipId=$(echo $ipjson | jq -r '.data['${i}'].id')
-		local privateipId=$(echo $ipjson | jq -r '.data['${i}']."private-ip-id"')
-
-		echo -e "publicipId is " $publicipId
-		echo -e "privateipId is " $privateipId		
+		local privateipId=$(echo $ipjson | jq -r '.data['${i}']."private-ip-id"')	
 		
 		echo -e "1. checking ip "$ipaddress
 		
