@@ -32,7 +32,7 @@ AVAILABILITY_DOMAIN="YOUR_AVAILABILITY_DOMAIN"
 ```
 
 
-```
+
 运行
 
 ```bash
