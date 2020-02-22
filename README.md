@@ -65,3 +65,4 @@ NOTIFICATION=0
 SERVERCHAN_KEY='YOUR_SERVERCHAN_API'
 ```
 
+如有使用问题请先搜索后发信息 https://t.me/angelsky11
