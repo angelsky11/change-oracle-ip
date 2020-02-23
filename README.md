@@ -38,9 +38,6 @@ chmod +x change-oracle-ip.sh
 ```
 */10 * * * * /YOUR_PATH/change-oracle-ip.sh default
 ```
-YOUR_PATH为脚本存放的路径，需修改
-
-
 如果不想10分钟一次请自行搜索crontab用法
 
 
