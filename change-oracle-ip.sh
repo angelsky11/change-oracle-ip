@@ -78,9 +78,8 @@ function main {
 				#ip地址阻塞
 				echo -e "2. this IP is dead, process start"
 				
-				
-				local json=$(oci network public-ip get --public-ip-address $public_ip --config-file $CONFIG_FILE)
 				#获取公共ip ID
+				local json=$(oci network public-ip get --public-ip-address $public_ip --config-file $CONFIG_FILE)
 				local publicipId=$(echo $json | jq -r '.data.id')
 				#获取私有ip ID
 				local privateipId=$(echo $json | jq -r '.data."private-ip-id"')			
